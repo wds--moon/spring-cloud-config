@@ -1,0 +1,83 @@
+spring:
+  profiles:
+    active: one
+---
+server:
+  port: 8001
+mybatis:
+  type-aliases-package: com.moon.entity
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+spring:
+  profiles: one
+  application:
+    name: provide-dept
+  datasource:
+      url: 'jdbc:mysql://10.10.1.100/db1?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&serverTimezone=Asia/Shanghai'
+      driver-class-name: 'com.mysql.cj.jdbc.Driver'
+      username: 'root'
+      password:  'Abc.123456'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureke7000.com:7000/eureka/,http://eureke7001.com:7001/eureka/,http://eureke7002.com:7002/eureka/
+  instance:
+      instance-id: provide-dept-8001
+# info 配置
+info:
+  name: 靖远小师兄
+  hobby: dota,和平精英
+
+---
+server:
+  port: 8002
+mybatis:
+  type-aliases-package: com.moon.entity
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+spring:
+  profiles: two
+  application:
+    name: provide-dept
+  datasource:
+      url: 'jdbc:mysql://10.10.1.100/db2?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&serverTimezone=Asia/Shanghai'
+      driver-class-name: 'com.mysql.cj.jdbc.Driver'
+      username: 'root'
+      password:  'Abc.123456'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureke7000.com:7000/eureka/,http://eureke7001.com:7001/eureka/,http://eureke7002.com:7002/eureka/
+  instance:
+      instance-id: provide-dept-8002
+# info 配置
+info:
+  name: 靖远小师兄
+  hobby: dota,和平精英
+
+---
+server:
+  port: 8003
+mybatis:
+  type-aliases-package: com.moon.entity
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+spring:
+  profiles: three
+  application:
+    name: provide-dept
+  datasource:
+      url: 'jdbc:mysql://10.10.1.100/db3?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&serverTimezone=Asia/Shanghai'
+      driver-class-name: 'com.mysql.cj.jdbc.Driver'
+      username: 'root'
+      password:  'Abc.123456'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureke7000.com:7000/eureka/,http://eureke7001.com:7001/eureka/,http://eureke7002.com:7002/eureka/
+  instance:
+      instance-id: provide-dept-8003
+# info 配置
+info:
+  name: 靖远小师兄
+  hobby: dota,和平精英
