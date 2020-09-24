@@ -25,7 +25,7 @@ spring:
     name: provide-dept
 eureka:
   instance:
-    hostname: eureke7000.com
+    hostname: eureke7001.com
   client:
     register-with-eureka: false # 自己不需要注册
     fetch-registry: false # false 表示自己是注册中心
@@ -40,7 +40,7 @@ spring:
     name: provide-dept
 eureka:
   instance:
-    hostname: eureke7000.com
+    hostname: eureke7002.com
   client:
     register-with-eureka: false # 自己不需要注册
     fetch-registry: false # false 表示自己是注册中心
