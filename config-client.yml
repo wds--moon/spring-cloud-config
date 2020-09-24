@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8201
+spring:
+  profiles: dev
+  application:
+    name: provide-dept
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureke7000.com:7000/eureka/,http://eureke7001.com:7001/eureka/,http://eureke7002.com:7002/eureka/
+---
+server:
+  port: 8201
+spring:
+  profiles: test
+  application:
+    name: provide-dept
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureke7000.com:7000/eureka/,http://eureke7001.com:7001/eureka/,http://eureke7002.com:7002/eureka/
