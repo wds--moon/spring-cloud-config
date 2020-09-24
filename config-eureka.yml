@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active: one
+---
+server:
+  port: 7000
+spring:
+  profiles: one
+  application:
+    name: provide-dept
+eureka:
+  instance:
+    hostname: eureke7000.com
+  client:
+    register-with-eureka: false # 自己不需要注册
+    fetch-registry: false # false 表示自己是注册中心
+    service-url:  # 监控页面
+      defaultZone: http://eureke7002.com:7002/,http://eureke7001.com:7001/
+---
+server:
+  port: 7001
+spring:
+  profiles: two
+  application:
+    name: provide-dept
+eureka:
+  instance:
+    hostname: eureke7000.com
+  client:
+    register-with-eureka: false # 自己不需要注册
+    fetch-registry: false # false 表示自己是注册中心
+    service-url:  # 监控页面
+      defaultZone: http://eureke7002.com:7002/,http://eureke7000.com:7000/
+---
+server:
+  port: 7002
+spring:
+  profiles: three
+  application:
+    name: provide-dept
+eureka:
+  instance:
+    hostname: eureke7000.com
+  client:
+    register-with-eureka: false # 自己不需要注册
+    fetch-registry: false # false 表示自己是注册中心
+    service-url:  # 监控页面
+      defaultZone: http://eureke7000.com:7000/,http://eureke7001.com:7001/
